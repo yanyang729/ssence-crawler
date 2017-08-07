@@ -1,5 +1,5 @@
 # ssence-crawler
-code challenge from JACL Omicron Technology
+Extract data from www.ssence.com, using scrapy & postgresql
 
 ## setup
 working environment : OSX 10.12.5
@@ -15,7 +15,6 @@ postgresql env
 ```bash
 brew install postgresql
 postgres -D /usr/local/var/postgres
-psql postgres
-# in psql shell
-CREATE DABASE ssense;
-CREATE TABLE category ( id    interger, name    varchar(1000), seokeyword    varchar(1000));
+```
+install pyadmin4 for mac
+
