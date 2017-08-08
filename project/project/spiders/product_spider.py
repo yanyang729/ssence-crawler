@@ -6,12 +6,13 @@ from scrapy.http import Request
 class CategorySpider(scrapy.Spider):
     TOTAL_MEN_PAGE = 101
     TOTAL_WOMEN_PAGE = 104
-    name = "prod4"
+    name = "product"
     allowed_domains = ["www.ssense.com/en-us/"]
 
-    # start_urls = ["http://www.ssense.com/en-us/men.json?page=%s" % (str(i+1)) for i in range(TOTAL_MEN_PAGE)] + \
-    #              ["http://www.ssense.com/en-us/women.json?page=%s" % (str(i+1)) for i in range(TOTAL_WOMEN_PAGE)]
-    start_urls = ["http://www.ssense.com/en-us/men.json"]
+    start_urls = ["http://www.ssense.com/en-us/men.json?page=%s" % (str(i+1)) for i in range(TOTAL_MEN_PAGE)] + \
+                 ["http://www.ssense.com/en-us/women.json?page=%s" % (str(i+1)) for i in range(TOTAL_WOMEN_PAGE)]
+    # # for test use
+    # start_urls = ["http://www.ssense.com/en-us/men.json"]
 
     def parse(self, response):
         json_response = json.loads(response.body_as_unicode())

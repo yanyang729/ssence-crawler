@@ -1,0 +1,5 @@
+scrapy
+scrapy-fake-useragen
+scrapy_proxies
+psycopg2
+
