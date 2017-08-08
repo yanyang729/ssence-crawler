@@ -30,6 +30,7 @@ class CategorySpider(scrapy.Spider):
         all_cat = []
         seoKeyword = response.url.split('/')[-1].split('.')[0]
         gender = response.url.split('/')[-2]
+
         # search for 1st level subcats if they have children also yield.
         for main_cat in json_response['facets']['categories']:
             if main_cat['children']:
