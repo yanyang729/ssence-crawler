@@ -79,9 +79,9 @@ PROXY_MODE = 1
 #CUSTOM_PROXY = "http://host1:port"
 
 DOWNLOADER_MIDDLEWARES = {
-    'scrapy.downloadermiddlewares.retry.RetryMiddleware': 90,
-    'scrapy_proxies.RandomProxy': 100,
-    'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 110,
+    # 'scrapy.downloadermiddlewares.retry.RetryMiddleware': 90,
+    # 'scrapy_proxies.RandomProxy': 100,
+    # 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': 110,
     'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware': None,
     'scrapy_fake_useragent.middleware.RandomUserAgentMiddleware': 400,
 }
