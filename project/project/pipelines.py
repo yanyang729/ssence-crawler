@@ -12,6 +12,7 @@ from .items import *
 class DumpPostgresPipeline(object):
     def __init__(self):
         self.connection = psycopg2.connect(host='localhost', database='ssense', user='yangyang')
+        self.connection.autocommit = True
         self.cursor = self.connection.cursor()
 
     def process_item(self, item, spider):
@@ -57,8 +58,6 @@ class DumpPostgresPipeline(object):
                     """,
                     (item.get('sku'), item.get('productid'), item.get('name'), item.get('instock'))
                 )
-
-            self.connection.commit()
 
         except psycopg2.DatabaseError as e:
             print("Error: %s" % e)
